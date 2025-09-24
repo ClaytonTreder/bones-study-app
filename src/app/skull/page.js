@@ -150,14 +150,14 @@ const SkeletalStudyApp = () => {
         </div>
 
         {/* Main Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6" style={{ minHeight: 650 }}>
           {studyMode === "flashcards" ? (
-            <>
+            <div  style={{ minHeight: 500 }}>
               <div className="text-center mb-6">
                 <div className="flex justify-center mb-4">
                   <img
                     src={currentItem.image}
-                    style={{ height: 400, width: "auto" }}
+                    style={{ maxHeight: 400, width: "auto", maxWidth: "100%" }}
                   />
                 </div>
                 <div className="text-sm text-gray-500">
@@ -204,14 +204,14 @@ const SkeletalStudyApp = () => {
                   </div>
                 )}
               </div>
-            </>
+            </div>
           ) : (
             // Quiz Mode
-            <div className="space-y-6">
+            <div className="space-y-6" style={{ minHeight: 650 }}>
               <div className="flex justify-center mb-4">
                 <img
                   src={currentItem.image}
-                  style={{ height: 400, width: "auto" }}
+                  style={{ maxHeight: 400, width: "auto", maxWidth: "100%" }}
                 />
               </div>
               <div className="grid gap-3">
@@ -272,7 +272,6 @@ const SkeletalStudyApp = () => {
             <ChevronLeft size={20} />
             Previous
           </button>
-
 
           <button
             onClick={nextCard}
