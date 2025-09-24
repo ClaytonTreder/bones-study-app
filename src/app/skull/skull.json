@@ -1,0 +1,207 @@
+{
+  "anatomyData": [
+    {
+      "name": "Frontal Bone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Frontal_bone_anterior.png/640px-Frontal_bone_anterior.png",
+      "description": "Forms the forehead and upper part of the eye sockets. Contains the frontal sinuses.",
+      "location": "Anterior part of the skull",
+      "function": "Protects the frontal lobe of the brain",
+      "quiz": {
+        "question": "Which bone forms the forehead and upper eye sockets?",
+        "options": [
+          "Frontal bone",
+          "Parietal bone",
+          "Temporal bone",
+          "Occipital bone"
+        ],
+        "correct": "Frontal bone"
+      }
+    },
+    {
+      "name": "Parietal Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Parietal_bone_superior3.png/640px-Parietal_bone_superior3.png",
+      "description": "Paired bones forming the superior and lateral sides of the skull.",
+      "location": "Top and sides of the cranial cavity",
+      "function": "Protect the parietal lobes and form the roof of the skull",
+      "quiz": {
+        "question": "Which paired bones form the roof and upper sides of the skull?",
+        "options": [
+          "Temporal bones",
+          "Parietal bones",
+          "Sphenoid bone",
+          "Occipital bone"
+        ],
+        "correct": "Parietal bones"
+      }
+    },
+    {
+      "name": "Temporal Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Temporal_bone_lateral5.png/640px-Temporal_bone_lateral5.png",
+      "description": "House structures of the inner and middle ear; form the sides and base of the skull.",
+      "location": "Lower lateral sides of the skull",
+      "function": "Protect the temporal lobes and support hearing structures",
+      "quiz": {
+        "question": "Which bones contain the ear structures and form the sides of the skull base?",
+        "options": [
+          "Temporal bones",
+          "Parietal bones",
+          "Frontal bone",
+          "Ethmoid bone"
+        ],
+        "correct": "Temporal bones"
+      }
+    },
+    {
+      "name": "Occipital Bone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Occipital_bone_lateral2.png/640px-Occipital_bone_lateral2.png",
+      "description": "Forms the back and base of the skull. Contains the foramen magnum.",
+      "location": "Posterior part of the skull",
+      "function": "Protects the occipital lobe and surrounds the foramen magnum for spinal cord passage",
+      "quiz": {
+        "question": "Which bone forms the back of the skull and contains the foramen magnum?",
+        "options": [
+          "Frontal bone",
+          "Occipital bone",
+          "Sphenoid bone",
+          "Temporal bones"
+        ],
+        "correct": "Occipital bone"
+      }
+    },
+    {
+      "name": "Sphenoid Bone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sphenoid_bone_-_anterior_view.png/640px-Sphenoid_bone_-_anterior_view.png",
+      "description": "Butterfly-shaped bone that forms part of the base of the skull and eye sockets.",
+      "location": "Central skull, anterior to the temporal bones",
+      "function": "Connects cranial bones and houses the pituitary gland",
+      "quiz": {
+        "question": "Which butterfly-shaped bone forms part of the skull base and houses the pituitary gland?",
+        "options": ["Ethmoid bone", "Sphenoid bone", "Frontal bone", "Maxilla"],
+        "correct": "Sphenoid bone"
+      }
+    },
+    {
+      "name": "Ethmoid Bone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ethmoid.png/640px-Ethmoid.png",
+      "description": "Lightweight spongy bone forming part of the nasal cavity and eye sockets.",
+      "location": "Between the eyes, anterior to the sphenoid",
+      "function": "Forms part of the nasal septum and supports the olfactory structures",
+      "quiz": {
+        "question": "Which bone helps form the nasal septum and supports the olfactory system?",
+        "options": ["Ethmoid bone", "Vomer", "Sphenoid bone", "Lacrimal bone"],
+        "correct": "Ethmoid bone"
+      }
+    },
+    {
+      "name": "Mandible",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Mandible_anterior.png/640px-Mandible_anterior.png",
+      "description": "The lower jawbone, largest and strongest facial bone.",
+      "location": "Lower face",
+      "function": "Supports lower teeth and enables chewing and speech",
+      "quiz": {
+        "question": "Which bone forms the lower jaw and holds the lower teeth?",
+        "options": ["Maxilla", "Mandible", "Zygomatic bone", "Palatine bone"],
+        "correct": "Mandible"
+      }
+    },
+    {
+      "name": "Maxillae",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maxilla_inferior_animation.gif/640px-Maxilla_inferior_animation.gif",
+      "description": "Paired bones forming the upper jaw and parts of the eye sockets and nasal cavity.",
+      "location": "Upper jaw and central face",
+      "function": "Support upper teeth and form part of the hard palate",
+      "quiz": {
+        "question": "Which paired bones form the upper jaw and support the upper teeth?",
+        "options": ["Maxillae", "Mandible", "Zygomatic bones", "Nasal bones"],
+        "correct": "Maxillae"
+      }
+    },
+    {
+      "name": "Zygomatic Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Zygomatic_bone_anterior.png/640px-Zygomatic_bone_anterior.png",
+      "description": "Cheekbones; form the prominence of the cheeks and part of the eye sockets.",
+      "location": "Lateral face",
+      "function": "Provide attachment for facial muscles and protect the eyes",
+      "quiz": {
+        "question": "Which bones are commonly known as the cheekbones?",
+        "options": [
+          "Zygomatic bones",
+          "Maxillae",
+          "Temporal bones",
+          "Palatine bones"
+        ],
+        "correct": "Zygomatic bones"
+      }
+    },
+    {
+      "name": "Nasal Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Nasal_bone_anterior.png/640px-Nasal_bone_anterior.png",
+      "description": "Small rectangular bones forming the bridge of the nose.",
+      "location": "Upper-middle face",
+      "function": "Support cartilage that shapes the lower nose",
+      "quiz": {
+        "question": "Which small paired bones form the bridge of the nose?",
+        "options": ["Nasal bones", "Lacrimal bones", "Vomer", "Ethmoid bone"],
+        "correct": "Nasal bones"
+      }
+    },
+    {
+      "name": "Lacrimal Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Lacrimal_bone_-_lateral_view6.png/640px-Lacrimal_bone_-_lateral_view6.png",
+      "description": "Small, fragile bones forming part of the medial wall of the orbit.",
+      "location": "Inner corner of the eye sockets",
+      "function": "House the nasolacrimal canal for tear drainage",
+      "quiz": {
+        "question": "Which bones contain the tear ducts in the inner corner of the eye sockets?",
+        "options": [
+          "Lacrimal bones",
+          "Nasal bones",
+          "Ethmoid bone",
+          "Zygomatic bones"
+        ],
+        "correct": "Lacrimal bones"
+      }
+    },
+    {
+      "name": "Palatine Bones",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Palatine_process_of_maxilla_-_animation01.gif/640px-Palatine_process_of_maxilla_-_animation01.gif",
+      "description": "L-shaped bones forming the posterior hard palate and part of the nasal cavity and orbit.",
+      "location": "Back of the nasal cavity",
+      "function": "Help form the roof of the mouth and nasal passages",
+      "quiz": {
+        "question": "Which paired bones form the back of the hard palate?",
+        "options": ["Palatine bones", "Maxillae", "Vomer", "Mandible"],
+        "correct": "Palatine bones"
+      }
+    },
+    {
+      "name": "Inferior Nasal Conchae",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Inferior_nasal_concha_-_animation_02.gif/640px-Inferior_nasal_concha_-_animation_02.gif",
+      "description": "Curved bones projecting from the lateral walls of the nasal cavity.",
+      "location": "Inside the nasal cavity",
+      "function": "Increase surface area to warm and humidify inhaled air",
+      "quiz": {
+        "question": "Which bones project from the lateral walls of the nasal cavity to help warm and humidify air?",
+        "options": [
+          "Inferior nasal conchae",
+          "Nasal bones",
+          "Lacrimal bones",
+          "Ethmoid bone"
+        ],
+        "correct": "Inferior nasal conchae"
+      }
+    },
+    {
+      "name": "Vomer",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rotation_Vomer_bone.gif/640px-Rotation_Vomer_bone.gif",
+      "description": "Thin, flat bone forming the lower part of the nasal septum.",
+      "location": "Midline of the nasal cavity",
+      "function": "Separates the left and right nasal passages",
+      "quiz": {
+        "question": "Which bone forms the lower portion of the nasal septum?",
+        "options": ["Vomer", "Ethmoid bone", "Palatine bone", "Maxilla"],
+        "correct": "Vomer"
+      }
+    }
+  ]
+}

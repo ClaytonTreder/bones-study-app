@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -11,6 +11,8 @@ import {
   Brain,
 } from "lucide-react";
 
+import data from "./skull.json";
+
 const SkeletalStudyApp = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -19,168 +21,41 @@ const SkeletalStudyApp = () => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
 
-  const anatomyData = [
-    {
-      name: "Frontal Bone",
-      image: "🧠",
-      description:
-        "Forms the forehead and upper part of the eye sockets. Contains the frontal sinuses.",
-      location: "Anterior part of the skull",
-      function: "Protects the frontal lobe of the brain",
-      quiz: {
-        question: "Which bone forms the forehead?",
-        options: [
-          "Parietal bone",
-          "Frontal bone",
-          "Temporal bone",
-          "Occipital bone",
-        ],
-        correct: "Frontal bone",
-      },
-    },
-    {
-      name: "Parietal Bone",
-      image: "👤",
-      description:
-        "Forms the sides and top of the skull. Two parietal bones meet at the sagittal suture.",
-      location: "Superior-lateral parts of the skull",
-      function: "Protects the parietal lobe of the brain",
-      quiz: {
-        question: "The parietal bones meet at which suture?",
-        options: [
-          "Coronal suture",
-          "Sagittal suture",
-          "Lambdoid suture",
-          "Squamous suture",
-        ],
-        correct: "Sagittal suture",
-      },
-    },
-    {
-      name: "Temporal Bone",
-      image: "👂",
-      description:
-        "Contains the ear canal and houses structures of the inner ear. Has mastoid and styloid processes.",
-      location: "Sides of the skull, below parietal bones",
-      function: "Houses hearing and balance organs",
-      quiz: {
-        question: "Which bone contains the ear canal?",
-        options: [
-          "Frontal bone",
-          "Sphenoid bone",
-          "Temporal bone",
-          "Occipital bone",
-        ],
-        correct: "Temporal bone",
-      },
-    },
-    {
-      name: "Occipital Bone",
-      image: "🔙",
-      description:
-        "Forms the back and base of the skull. Contains the foramen magnum where the spinal cord connects.",
-      location: "Posterior part of the skull",
-      function: "Protects the occipital lobe and cerebellum",
-      quiz: {
-        question: "The foramen magnum is found in which bone?",
-        options: [
-          "Frontal bone",
-          "Parietal bone",
-          "Temporal bone",
-          "Occipital bone",
-        ],
-        correct: "Occipital bone",
-      },
-    },
-    {
-      name: "Sphenoid Bone",
-      image: "🦋",
-      description:
-        "Butterfly-shaped bone that forms part of the skull base. Contains the sella turcica which houses the pituitary gland.",
-      location: "Central part of skull base",
-      function: "Forms part of eye socket and nasal cavity",
-      quiz: {
-        question: "The sella turcica houses which gland?",
-        options: [
-          "Thyroid gland",
-          "Pituitary gland",
-          "Adrenal gland",
-          "Pineal gland",
-        ],
-        correct: "Pituitary gland",
-      },
-    },
-    {
-      name: "Ethmoid Bone",
-      image: "👃",
-      description:
-        "Forms part of the nasal septum and roof of nasal cavity. Contains cribriform plate with holes for olfactory nerves.",
-      location: "Between nasal cavity and brain",
-      function: "Supports olfactory nerves for smell",
-      quiz: {
-        question: "The cribriform plate allows passage of which nerves?",
-        options: [
-          "Optic nerves",
-          "Olfactory nerves",
-          "Auditory nerves",
-          "Facial nerves",
-        ],
-        correct: "Olfactory nerves",
-      },
-    },
-    {
-      name: "Maxilla",
-      image: "🦷",
-      description:
-        "Forms the upper jaw and holds the upper teeth. Contains maxillary sinuses.",
-      location: "Upper jaw area",
-      function: "Supports upper teeth and forms part of nasal cavity",
-      quiz: {
-        question: "Which bone forms the upper jaw?",
-        options: ["Mandible", "Maxilla", "Zygomatic", "Palatine"],
-        correct: "Maxilla",
-      },
-    },
-    {
-      name: "Mandible",
-      image: "🦴",
-      description:
-        "The lower jaw bone, largest facial bone. Only movable bone of the skull.",
-      location: "Lower jaw area",
-      function: "Supports lower teeth and enables jaw movement",
-      quiz: {
-        question: "Which is the only movable bone of the skull?",
-        options: ["Maxilla", "Temporal bone", "Mandible", "Zygomatic bone"],
-        correct: "Mandible",
-      },
-    },
-    {
-      name: "Nasal Bone",
-      image: "👃",
-      description:
-        "Forms the bridge of the nose. Paired bones that meet at the midline.",
-      location: "Bridge of nose",
-      function: "Provides structure to upper nose",
-      quiz: {
-        question: "How many nasal bones are there?",
-        options: ["1", "2", "3", "4"],
-        correct: "2",
-      },
-    },
-    {
-      name: "Vomer",
-      image: "🔸",
-      description:
-        "Forms the inferior part of the nasal septum, dividing the nasal cavity.",
-      location: "Lower nasal septum",
-      function: "Separates left and right nasal cavities",
-      quiz: {
-        question: "The vomer forms part of the:",
-        options: ["Eye socket", "Nasal septum", "Jaw joint", "Ear canal"],
-        correct: "Nasal septum",
-      },
-    },
-  ];
+  function shuffleArray(array) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
+  const anatomyData = useMemo(
+    () =>
+      studyMode === "flashcards"
+        ? shuffleArray(data.anatomyData)
+        : shuffleArray(data.anatomyData).slice(0, 5),
+    [studyMode]
+  );
+
+  useEffect(() => {
+    // Reset state when switching modes
+    setCurrentIndex(0);
+    setShowAnswer(false);
+    setSelectedAnswer("");
+    setAnswerSubmitted(false);
+  }, [studyMode]);
 
   const nextCard = () => {
     if (currentIndex < anatomyData.length - 1) {
@@ -276,58 +151,68 @@ const SkeletalStudyApp = () => {
 
         {/* Main Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
-          <div className="text-center mb-6">
-            <div className="text-8xl mb-4">{currentItem.image}</div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              {currentItem.name}
-            </h2>
-            <div className="text-sm text-gray-500">
-              {currentIndex + 1} of {anatomyData.length}
-            </div>
-          </div>
-
           {studyMode === "flashcards" ? (
-            // Flashcard Mode
-            <div className="space-y-4">
-              {!showAnswer ? (
-                <div className="text-center">
-                  <button
-                    onClick={() => setShowAnswer(true)}
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
-                  >
-                    Show Details
-                  </button>
+            <>
+              <div className="text-center mb-6">
+                <div className="flex justify-center mb-4">
+                  <img
+                    src={currentItem.image}
+                    style={{ height: 400, width: "auto" }}
+                  />
                 </div>
-              ) : (
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-blue-50 p-4 rounded-lg">
-                      <h3 className="font-semibold text-blue-900 mb-2">
-                        Description
-                      </h3>
-                      <p className="text-blue-800">{currentItem.description}</p>
+                <div className="text-sm text-gray-500">
+                  {currentIndex + 1} of {anatomyData.length}
+                </div>
+              </div>
+              <div className="space-y-4">
+                {!showAnswer ? (
+                  <div className="text-center">
+                    <button
+                      onClick={() => setShowAnswer(true)}
+                      className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                    >
+                      Show Details
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">
+                      {currentItem.name}
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="bg-blue-50 p-4 rounded-lg">
+                        <h3 className="font-semibold text-blue-900 mb-2">
+                          Description
+                        </h3>
+                        <p className="text-blue-800">
+                          {currentItem.description}
+                        </p>
+                      </div>
+                      <div className="bg-green-50 p-4 rounded-lg">
+                        <h3 className="font-semibold text-green-900 mb-2">
+                          Location
+                        </h3>
+                        <p className="text-green-800">{currentItem.location}</p>
+                      </div>
                     </div>
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <h3 className="font-semibold text-green-900 mb-2">
-                        Location
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h3 className="font-semibold text-purple-900 mb-2">
+                        Function{" "}
                       </h3>
-                      <p className="text-green-800">{currentItem.location}</p>
+                      <p className="text-purple-800">{currentItem.function}</p>
                     </div>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h3 className="font-semibold text-purple-900 mb-2">
-                      Function
-                    </h3>
-                    <p className="text-purple-800">{currentItem.function}</p>
-                  </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            </>
           ) : (
             // Quiz Mode
             <div className="space-y-6">
-              <div className="text-xl font-semibold text-gray-800 text-center mb-6">
-                {currentItem.quiz.question}
+              <div className="flex justify-center mb-4">
+                <img
+                  src={currentItem.image}
+                  style={{ height: 400, width: "auto" }}
+                />
               </div>
               <div className="grid gap-3">
                 {currentItem.quiz.options.map((option, index) => {
