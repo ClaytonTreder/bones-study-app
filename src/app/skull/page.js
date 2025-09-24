@@ -98,7 +98,10 @@ const SkeletalStudyApp = () => {
   const currentItem = anatomyData[currentIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div
+      className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4"
+      style={{ position: "relative" }}
+    >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
@@ -267,20 +270,26 @@ const SkeletalStudyApp = () => {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center">
+        <div
+          className="flex justify-between items-center"
+          style={{
+            position: "absolute",
+            top: "300px",
+            width: "90%",
+            left: "5%",
+          }}
+        >
           <button
             onClick={prevCard}
-            className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-300 rounded-lg font-medium text-gray-700 transition-colors"
+            className="flex items-center gap-2 px-3 py-3 bg-white hover:bg-gray-50 border border-gray-300 rounded-lg font-medium text-gray-700 transition-colors"
           >
             <ChevronLeft size={20} />
-            Previous
           </button>
 
           <button
             onClick={nextCard}
-            className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-300 rounded-lg font-medium text-gray-700 transition-colors"
+            className="flex items-center gap-2 px-3 py-3 bg-white hover:bg-gray-50 border border-gray-300 rounded-lg font-medium text-gray-700 transition-colors"
           >
-            Next
             <ChevronRight size={20} />
           </button>
         </div>
