@@ -273,24 +273,6 @@ const SkeletalStudyApp = () => {
             Previous
           </button>
 
-          <div className="flex gap-2">
-            {anatomyData.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setShowAnswer(false);
-                  setSelectedAnswer("");
-                  setAnswerSubmitted(false);
-                }}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex
-                    ? "bg-indigo-600"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-              />
-            ))}
-          </div>
 
           <button
             onClick={nextCard}
