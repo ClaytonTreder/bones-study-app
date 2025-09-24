@@ -150,9 +150,12 @@ const SkeletalStudyApp = () => {
         </div>
 
         {/* Main Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6" style={{ minHeight: 650 }}>
+        <div
+          className="bg-white rounded-2xl shadow-xl p-8 mb-6"
+          style={{ minHeight: 400 }}
+        >
           {studyMode === "flashcards" ? (
-            <div  style={{ minHeight: 500 }}>
+            <div style={{ minHeight: 500 }}>
               <div className="text-center mb-6">
                 <div className="flex justify-center mb-4">
                   <img
@@ -207,7 +210,7 @@ const SkeletalStudyApp = () => {
             </div>
           ) : (
             // Quiz Mode
-            <div className="space-y-6" style={{ minHeight: 650 }}>
+            <div className="space-y-6" style={{ minHeight: 400 }}>
               <div className="flex justify-center mb-4">
                 <img
                   src={currentItem.image}
